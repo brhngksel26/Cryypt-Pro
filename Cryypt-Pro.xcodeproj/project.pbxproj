@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		72BFAF142A64131800D8014E /* ViewCryptoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BFAF132A64131800D8014E /* ViewCryptoController.swift */; };
 		72BFAF162A64257F00D8014E /* ViewCryptoControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BFAF152A64257F00D8014E /* ViewCryptoControllerViewModel.swift */; };
+		72BFAF182A64337A00D8014E /* CoinError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BFAF172A64337A00D8014E /* CoinError.swift */; };
+		72BFAF1A2A64481900D8014E /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BFAF192A64481900D8014E /* HTTP.swift */; };
+		72BFAF1C2A644B2D00D8014E /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BFAF1B2A644B2D00D8014E /* Endpoint.swift */; };
 		72CD73912A63331800B7C308 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD73902A63331800B7C308 /* AppDelegate.swift */; };
 		72CD73932A63331800B7C308 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD73922A63331800B7C308 /* SceneDelegate.swift */; };
 		72CD73952A63331800B7C308 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72CD73942A63331800B7C308 /* HomeController.swift */; };
@@ -22,6 +25,9 @@
 /* Begin PBXFileReference section */
 		72BFAF132A64131800D8014E /* ViewCryptoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCryptoController.swift; sourceTree = "<group>"; };
 		72BFAF152A64257F00D8014E /* ViewCryptoControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCryptoControllerViewModel.swift; sourceTree = "<group>"; };
+		72BFAF172A64337A00D8014E /* CoinError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinError.swift; sourceTree = "<group>"; };
+		72BFAF192A64481900D8014E /* HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
+		72BFAF1B2A644B2D00D8014E /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		72CD738D2A63331800B7C308 /* Cryypt-Pro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cryypt-Pro.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		72CD73902A63331800B7C308 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		72CD73922A63331800B7C308 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +84,8 @@
 		72CD73A42A63352D00B7C308 /* API */ = {
 			isa = PBXGroup;
 			children = (
+				72BFAF192A64481900D8014E /* HTTP.swift */,
+				72BFAF1B2A644B2D00D8014E /* Endpoint.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -86,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				72CD73AC2A6338DB00B7C308 /* Coin.swift */,
+				72BFAF172A64337A00D8014E /* CoinError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -202,8 +211,11 @@
 				72BFAF162A64257F00D8014E /* ViewCryptoControllerViewModel.swift in Sources */,
 				72CD73932A63331800B7C308 /* SceneDelegate.swift in Sources */,
 				72BFAF142A64131800D8014E /* ViewCryptoController.swift in Sources */,
+				72BFAF1A2A64481900D8014E /* HTTP.swift in Sources */,
+				72BFAF182A64337A00D8014E /* CoinError.swift in Sources */,
 				72CD73AD2A6338DB00B7C308 /* Coin.swift in Sources */,
 				72CD73AF2A633B7300B7C308 /* CoinCell.swift in Sources */,
+				72BFAF1C2A644B2D00D8014E /* Endpoint.swift in Sources */,
 				72CD73AB2A63375400B7C308 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

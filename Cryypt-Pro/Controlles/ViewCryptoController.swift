@@ -99,10 +99,10 @@ class ViewCryptoController: UIViewController {
             title: "Back", style: .done, target: nil, action: nil
         )
         
-        self.rankLabel.text = self.viewModel.coin.cmc_rank.description
-        self.priceLabel.text = self.viewModel.coin.quote.CAD.price.description
-        self.marketCapLabel.text = self.viewModel.coin.quote.CAD.market_cap.description
-        self.maxSupplyLabel.text = self.viewModel.coin.max_supply?.description ?? ""
+        self.rankLabel.text = self.viewModel.coin.rank.description
+        self.priceLabel.text = self.viewModel.coin.pricingData.CAD.price.description
+        self.marketCapLabel.text = self.viewModel.coin.pricingData.CAD.marketCap.description
+        self.maxSupplyLabel.text = self.viewModel.coin.maxSupply?.description ?? ""
         
         self.viewModel.onImageLoaded = { [weak self] logoImage in
             DispatchQueue.main.async {
