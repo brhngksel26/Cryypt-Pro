@@ -101,7 +101,7 @@ class ViewCryptoController: UIViewController {
         
         self.rankLabel.text = self.viewModel.coin.rank.description
         self.priceLabel.text = self.viewModel.coin.pricingData.CAD.price.description
-        self.marketCapLabel.text = self.viewModel.coin.pricingData.CAD.marketCap.description
+        self.marketCapLabel.text = self.viewModel.coin.pricingData.CAD.market_cap.description
         self.maxSupplyLabel.text = self.viewModel.coin.maxSupply?.description ?? ""
         
         self.viewModel.onImageLoaded = { [weak self] logoImage in

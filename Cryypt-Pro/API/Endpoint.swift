@@ -31,6 +31,14 @@ enum Endpoint {
         return components.url
     }
     
+    private var path: String {
+        switch self {
+        case .fetchCoins(let url):
+            return url
+        }
+    }
+    
+    
     private var queryItems: [URLQueryItem] {
         switch self {
         case .fetchCoins:
@@ -43,13 +51,6 @@ enum Endpoint {
         }
     }
     
-    
-    private var path: String {
-        switch self {
-        case .fetchCoins(let url):
-            return url
-        }
-    }
     
     private var httpMethod: String {
         switch self {
@@ -67,11 +68,13 @@ enum Endpoint {
 }
 
 
+
 extension URLRequest {
+    
     mutating func addValues(for endpoint: Endpoint) {
         switch endpoint {
         case .fetchCoins:
-
+            self.setValue(HTTP.Headers.Value.applicationJson.rawValue, forHTTPHeaderField: HTTP.Headers.Key.contentType.rawValue)
             self.setValue(Constants.API_KEY, forHTTPHeaderField: HTTP.Headers.Key.apiKey.rawValue)
         }
     }

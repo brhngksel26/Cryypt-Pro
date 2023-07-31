@@ -11,7 +11,7 @@ struct CoinArray: Decodable {
     let data: [Coin]
 }
 
-struct Coin: Decodable {
+struct Coin: Codable {
     let id: Int
     let name: String
     let maxSupply: Int?
@@ -31,21 +31,11 @@ struct Coin: Decodable {
     }
 }
 
-struct PricingData: Decodable {
+struct PricingData: Codable {
     let CAD: CAD
 }
 
-struct CAD: Decodable {
+struct CAD: Codable {
     let price: Double
-    let marketCap: Double
-}
-
-extension Coin {
-    public static func getMockArray() -> [Coin] {
-        return [
-            Coin(id: 1, name: "Bitcoin", maxSupply: 200, rank: 1, pricingData: PricingData(CAD: CAD(price: 50000, marketCap: 1_000_000))),
-            Coin(id: 2, name: "Ethereum", maxSupply: nil, rank: 2, pricingData: PricingData(CAD: CAD(price: 2000, marketCap: 500_000))),
-            Coin(id: 3, name: "Monero", maxSupply: nil, rank: 3, pricingData: PricingData(CAD: CAD(price: 200, marketCap: 250_000)))
-        ]
-    }
+    let market_cap: Double
 }

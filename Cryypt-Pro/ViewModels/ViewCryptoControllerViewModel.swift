@@ -46,7 +46,7 @@ class ViewCryptoControllerViewModel {
     }
     
     var marketCapLabel: String {
-        return "Market Cap: \(self.coin.pricingData.CAD.marketCap) CAD"
+        return "Market Cap: \(self.coin.pricingData.CAD.market_cap) CAD"
     }
     
     var maxSupplyLabel: String {

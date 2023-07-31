@@ -7,6 +7,10 @@
 
 import Foundation
 
+struct CoinStatus: Decodable {
+    let status: CoinError
+}
+
 struct CoinError: Decodable {
     let errorCode: Int
     let errorMessage: String

@@ -21,7 +21,7 @@ enum HTTP {
         }
         
         enum Value: String {
-            case apiKey = "6653219b-5028-4ace-8af5-4cc819f7b748"
+            case applicationJson = "application/json"
         }
     }
     
