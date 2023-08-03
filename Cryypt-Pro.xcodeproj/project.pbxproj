@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1808B8CF6264CA1833AE5B74 /* Pods_Cryypt_Pro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 686EE29BF10BFA1359468C62 /* Pods_Cryypt_Pro.framework */; };
+		727A60172A78430300B49D29 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 727A60162A78430300B49D29 /* SDWebImage */; };
+		727A60192A78430300B49D29 /* SDWebImageMapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 727A60182A78430300B49D29 /* SDWebImageMapKit */; };
 		72BFAF142A64131800D8014E /* ViewCryptoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BFAF132A64131800D8014E /* ViewCryptoController.swift */; };
 		72BFAF162A64257F00D8014E /* ViewCryptoControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BFAF152A64257F00D8014E /* ViewCryptoControllerViewModel.swift */; };
 		72BFAF182A64337A00D8014E /* CoinError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BFAF172A64337A00D8014E /* CoinError.swift */; };
@@ -25,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E1A19C969CA2F301F450517 /* Pods-Cryypt-Pro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cryypt-Pro.debug.xcconfig"; path = "Target Support Files/Pods-Cryypt-Pro/Pods-Cryypt-Pro.debug.xcconfig"; sourceTree = "<group>"; };
+		686EE29BF10BFA1359468C62 /* Pods_Cryypt_Pro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cryypt_Pro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72BFAF132A64131800D8014E /* ViewCryptoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCryptoController.swift; sourceTree = "<group>"; };
 		72BFAF152A64257F00D8014E /* ViewCryptoControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCryptoControllerViewModel.swift; sourceTree = "<group>"; };
 		72BFAF172A64337A00D8014E /* CoinError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinError.swift; sourceTree = "<group>"; };
@@ -42,6 +47,7 @@
 		72CD73AA2A63375400B7C308 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		72CD73AC2A6338DB00B7C308 /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
 		72CD73AE2A633B7300B7C308 /* CoinCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinCell.swift; sourceTree = "<group>"; };
+		73E338989E5AE73111519611 /* Pods-Cryypt-Pro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cryypt-Pro.release.xcconfig"; path = "Target Support Files/Pods-Cryypt-Pro/Pods-Cryypt-Pro.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,17 +55,40 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				727A60192A78430300B49D29 /* SDWebImageMapKit in Frameworks */,
+				727A60172A78430300B49D29 /* SDWebImage in Frameworks */,
+				1808B8CF6264CA1833AE5B74 /* Pods_Cryypt_Pro.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0007CBD771C988B58A846053 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				686EE29BF10BFA1359468C62 /* Pods_Cryypt_Pro.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2E2A7EB9BA89A98B60C1FE29 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4E1A19C969CA2F301F450517 /* Pods-Cryypt-Pro.debug.xcconfig */,
+				73E338989E5AE73111519611 /* Pods-Cryypt-Pro.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		72CD73842A63331800B7C308 = {
 			isa = PBXGroup;
 			children = (
 				72CD738F2A63331800B7C308 /* Cryypt-Pro */,
 				72CD738E2A63331800B7C308 /* Products */,
+				2E2A7EB9BA89A98B60C1FE29 /* Pods */,
+				0007CBD771C988B58A846053 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -149,15 +178,21 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 72CD73A12A63331A00B7C308 /* Build configuration list for PBXNativeTarget "Cryypt-Pro" */;
 			buildPhases = (
+				7C3B7ABD722553AC93AFF001 /* [CP] Check Pods Manifest.lock */,
 				72CD73892A63331800B7C308 /* Sources */,
 				72CD738A2A63331800B7C308 /* Frameworks */,
 				72CD738B2A63331800B7C308 /* Resources */,
+				47884F40CD1B88D01826C711 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "Cryypt-Pro";
+			packageProductDependencies = (
+				727A60162A78430300B49D29 /* SDWebImage */,
+				727A60182A78430300B49D29 /* SDWebImageMapKit */,
+			);
 			productName = "Cryypt-Pro";
 			productReference = 72CD738D2A63331800B7C308 /* Cryypt-Pro.app */;
 			productType = "com.apple.product-type.application";
@@ -186,6 +221,9 @@
 				Base,
 			);
 			mainGroup = 72CD73842A63331800B7C308;
+			packageReferences = (
+				727A60152A78430300B49D29 /* XCRemoteSwiftPackageReference "SDWebImage" */,
+			);
 			productRefGroup = 72CD738E2A63331800B7C308 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -206,6 +244,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		47884F40CD1B88D01826C711 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Cryypt-Pro/Pods-Cryypt-Pro-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Cryypt-Pro/Pods-Cryypt-Pro-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Cryypt-Pro/Pods-Cryypt-Pro-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7C3B7ABD722553AC93AFF001 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Cryypt-Pro-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		72CD73892A63331800B7C308 /* Sources */ = {
@@ -358,6 +438,7 @@
 		};
 		72CD73A22A63331A00B7C308 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E1A19C969CA2F301F450517 /* Pods-Cryypt-Pro.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -386,6 +467,7 @@
 		};
 		72CD73A32A63331A00B7C308 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73E338989E5AE73111519611 /* Pods-Cryypt-Pro.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -434,6 +516,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		727A60152A78430300B49D29 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		727A60162A78430300B49D29 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 727A60152A78430300B49D29 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
+		};
+		727A60182A78430300B49D29 /* SDWebImageMapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 727A60152A78430300B49D29 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImageMapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 72CD73852A63331800B7C308 /* Project object */;
 }

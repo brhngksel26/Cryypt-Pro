@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class ViewCryptoController: UIViewController {
     
@@ -74,7 +75,7 @@ class ViewCryptoController: UIViewController {
         vStack.axis = .vertical
         vStack.spacing = 12
         vStack.distribution = .fill
-        vStack.alignment = .center
+        vStack.alignment = .center  
         return vStack
     }()
     
@@ -103,12 +104,8 @@ class ViewCryptoController: UIViewController {
         self.priceLabel.text = self.viewModel.coin.pricingData.CAD.price.description
         self.marketCapLabel.text = self.viewModel.coin.pricingData.CAD.market_cap.description
         self.maxSupplyLabel.text = self.viewModel.coin.maxSupply?.description ?? ""
+        self.coinLogo.sd_setImage(with: self.viewModel.coin.logoURL)
         
-        self.viewModel.onImageLoaded = { [weak self] logoImage in
-            DispatchQueue.main.async {
-                self?.coinLogo.image = logoImage
-            }
-        }
 
     }
     
