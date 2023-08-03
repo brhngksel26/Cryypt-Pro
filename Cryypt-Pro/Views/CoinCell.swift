@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class CoinCell: UITableViewCell {
     
@@ -42,22 +43,7 @@ class CoinCell: UITableViewCell {
         self.coin = coin
         self.coinName.text = coin.name
         
-        DispatchQueue.global().async { [weak self] in
-            if let logoURL = coin.logoURL,
-               let imageData = try? Data(contentsOf: logoURL),
-               let logoImage = UIImage(data: imageData) {
-                
-                DispatchQueue.main.async {
-                    self?.coinLogo.image = logoImage
-                }
-            }
-        }
-        let imageData = try? Data(contentsOf: self.coin.logoURL!)
-        if let imageData = imageData{
-            DispatchQueue.main.async { [weak self] in
-                self?.coinLogo.image = UIImage(data: imageData)
-            }
-        }
+        self.coinLogo.sd_setImage(with: coin.logoURL)
     }
     
     override func prepareForReuse() {

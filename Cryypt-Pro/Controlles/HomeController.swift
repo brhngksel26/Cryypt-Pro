@@ -15,6 +15,8 @@ class HomeController: UIViewController {
     
     // MARK: - UI Components
     
+    private let searchController = UISearchController(searchResultsController: nil)
+    
     private let tableView: UITableView = {
         let tv = UITableView()
         tv.backgroundColor = .systemBackground
@@ -34,6 +36,7 @@ class HomeController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupSearchController()
         self.setupUI()
         
         self.tableView.delegate = self
@@ -84,24 +87,45 @@ class HomeController: UIViewController {
         ])
     }
     
+    private func setupSearchController(){
+        self.searchController.searchResultsUpdater = self
+        self.searchController.obscuresBackgroundDuringPresentation = false
+        self.searchController.hidesNavigationBarDuringPresentation = false
+        self.searchController.searchBar.placeholder = "Search Cryptos"
+        
+        self.navigationItem.searchController = searchController
+        self.definesPresentationContext = false
+        self.navigationItem.hidesSearchBarWhenScrolling = false
+        
+    }
+    
     // MARK: - Selectors
 
 }
 
 
-// MARK: - TableView Functions
+// MARK: - UIView Functions
+
+extension HomeController: UISearchResultsUpdating, UISearchControllerDelegate {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        self.viewModel.updateSearchController(searchBarText: searchController.searchBar.text)
+    }
+
+}
 
 extension HomeController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        self.viewModel.coins.count
+        let inSearchMode = self.viewModel.inSearchMode(searchController)
+        return inSearchMode ? self.viewModel.filteredCoins.count : self.viewModel.allCoins.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CoinCell.identifier, for: indexPath) as? CoinCell else {
             fatalError("Unable to dequeue CoinCell in HomeController")
         }
-        
-        let coin = self.viewModel.coins[indexPath.row]
+        let inSearchMode = self.viewModel.inSearchMode(searchController)
+        let coin = inSearchMode ? self.viewModel.allCoins[indexPath.row] : self.viewModel.allCoins[indexPath.row]
         cell.configure(with: coin)
         return cell
     }
@@ -112,7 +136,9 @@ extension HomeController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tableView.deselectRow(at: indexPath, animated: true)
-        let coin = self.viewModel.coins[indexPath.row]
+        
+        let inSearchMode = self.viewModel.inSearchMode(searchController)
+        let coin = inSearchMode ? self.viewModel.allCoins[indexPath.row] : self.viewModel.allCoins[indexPath.row]
         let cryptoViewModel = ViewCryptoControllerViewModel(coin)
         let cryptoView = ViewCryptoController(cryptoViewModel)
         self.navigationController?.pushViewController(cryptoView, animated: true)
